@@ -1,0 +1,9 @@
+[Desktop Entry]
+X-SnapInstanceName=postman
+Name=Postman
+Exec=env BAMF_DESKTOP_FILE_HINT=/var/lib/snapd/desktop/applications/postman_postman.desktop /snap/bin/postman
+Icon=/snap/postman/191/usr/share/postman/icons/icon_128x128.png
+Categories=Utility
+Terminal=false
+Type=Application
+
