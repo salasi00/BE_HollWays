@@ -5,6 +5,7 @@ import (
 	"holyways/database"
 	"holyways/pkg/mysql"
 	"holyways/routes"
+	"os"
 
 	"github.com/joho/godotenv"
 	"github.com/labstack/echo/v4"
@@ -27,11 +28,11 @@ func main() {
 		AllowHeaders: []string{"X-Requested-With", "Content-Type", "Authorization"},
 	}))
 
-	port := "5000"
+	port := os.Getenv("PORT")
 
 	routes.RouteInit(e.Group("/api/v1"))
 	e.Static("/uploads", "./uploads")
 
 	fmt.Println("Server running on localhost:" + port)
-	e.Logger.Fatal(e.Start("localhost:" + port))
+	e.Logger.Fatal(e.Start(":" + port))
 }
