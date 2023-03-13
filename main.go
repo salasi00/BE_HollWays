@@ -28,11 +28,11 @@ func main() {
 		AllowHeaders: []string{"X-Requested-With", "Content-Type", "Authorization"},
 	}))
 
-	port := os.Getenv("PORT")
+	PORT := os.Getenv("PORT")
 
 	routes.RouteInit(e.Group("/api/v1"))
 	e.Static("/uploads", "./uploads")
 
-	fmt.Println("Server running on localhost:" + port)
-	e.Logger.Fatal(e.Start(":" + port))
+	fmt.Println("Server running on localhost:" + PORT)
+	e.Logger.Fatal(e.Start(":" + PORT))
 }
